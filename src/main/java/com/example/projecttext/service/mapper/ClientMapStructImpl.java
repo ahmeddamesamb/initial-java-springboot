@@ -6,10 +6,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClientMapStructImol implements ClientMapStruct{
+public class ClientMapStructImpl implements ClientMapStruct{
     private final ModelMapper modelMapper;
 
-    public ClientMapStructImol(ModelMapper modelMapper) {
+    public ClientMapStructImpl(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 

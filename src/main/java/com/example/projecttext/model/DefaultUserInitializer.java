@@ -6,7 +6,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class DefaultUserInitializer implements CommandLineRunner {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -23,7 +22,7 @@ public class DefaultUserInitializer implements CommandLineRunner {
         defaultUser.setPrenom("Ahmed Dame");
         defaultUser.setEmail("pdg@ugb.edu.sn");
         defaultUser.setPassword(passwordEncoder.encode("12345"));
-        defaultUser.setTelephone("777000000");
+        defaultUser.setTelephone("776894999");
         defaultUser.setERole(ERole.ADMIN);
 
         userRepository.save(defaultUser);

@@ -1,2 +1,4 @@
-package com.example.projecttext.service;public interface LivreurService {
+package com.example.projecttext.service;
+
+public interface LivreurService {
 }

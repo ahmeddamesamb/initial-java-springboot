@@ -45,7 +45,6 @@ public class UserServiceImpl implements UserService{
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setERole(ERole.ADMIN);
         userRepository.save(user);
-
         return new AuthenticationResponse();
     }
 
@@ -59,11 +58,11 @@ public class UserServiceImpl implements UserService{
                     "La tentative de mise a jour du user na pas aboutit"
                 )
             );
-        user.setNom(userRequestAuthenticationRequest.getNom());
-        user.setPrenom(userRequestAuthenticationRequest.getPrenom());
+//        user.setNom(userRequestAuthenticationRequest.getNom());
+//        user.setPrenom(userRequestAuthenticationRequest.getPrenom());
         user.setEmail(userRequestAuthenticationRequest.getEmail());
         user.setPassword(passwordEncoder.encode(userRequestAuthenticationRequest.getPassword()));
-        user.setTelephone(userRequestAuthenticationRequest.getTelephone());
+//        user.setTelephone(userRequestAuthenticationRequest.getTelephone());
         user.setERole(ERole.ADMIN);
          userRepository.save(user);
         return new AuthenticationResponse();

@@ -1,2 +1,4 @@
-package com.example.projecttext.model;public class Livreur {
+package com.example.projecttext.model;
+
+public class Livreur {
 }

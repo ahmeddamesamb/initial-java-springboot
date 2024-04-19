@@ -1,2 +1,7 @@
-package com.example.projecttext.dto;public class GestionaireDto {
+package com.example.projecttext.dto;
+
+import lombok.Data;
+
+@Data
+public class GestionaireDto {
 }

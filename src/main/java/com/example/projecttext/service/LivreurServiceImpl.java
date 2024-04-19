@@ -1,2 +1,7 @@
-package com.example.projecttext.service;public class LivreurServiceImpl {
+package com.example.projecttext.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class LivreurServiceImpl {
 }

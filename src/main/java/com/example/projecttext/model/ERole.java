@@ -2,5 +2,8 @@ package com.example.projecttext.model;
 
 public enum ERole {
     ADMIN,
-    USER
+    USER,
+    LIVREUR,
+    CLIENT,
+    GESTIONAIRE
 }

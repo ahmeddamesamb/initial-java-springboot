@@ -1,2 +1,7 @@
-package com.example.projecttext.dto;public class ClientDto {
+package com.example.projecttext.dto;
+
+import lombok.Data;
+
+@Data
+public class ClientDto {
 }
