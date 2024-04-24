@@ -37,7 +37,7 @@ public class GestionaireServiceImpl implements GestionaireService {
     }
 
     @Override
-    public Optional<GestionaireDto> update(GestionaireDto gestionaireDto, Long id) {
+    public Optional<GestionaireDto> update(GestionaireDto gestionaireDto) {
         log.debug("Request to partially update Client : {}", gestionaireDto);
 
         return gestionaireRepository

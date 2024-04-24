@@ -36,7 +36,7 @@ public class LivreurServiceImpl implements LivreurService {
     }
 
     @Override
-    public Optional<LivreurDto> update(LivreurDto livreurDto, Long id) {
+    public Optional<LivreurDto> update(LivreurDto livreurDto) {
         log.debug("Request to partially update livreur : {}", livreurDto);
 
         return livreurRepository

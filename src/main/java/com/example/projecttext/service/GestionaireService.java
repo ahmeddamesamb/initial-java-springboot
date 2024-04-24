@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface GestionaireService {
     GestionaireDto save(GestionaireDto gestionaireDto);
 
-    Optional<GestionaireDto> update(GestionaireDto gestionaireDto, Long id);
+    Optional<GestionaireDto> update(GestionaireDto gestionaireDto);
 
     Page<GestionaireDto> findAll(Pageable pageable);
 

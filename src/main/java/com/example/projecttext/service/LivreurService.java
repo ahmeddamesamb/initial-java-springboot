@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface LivreurService {
     LivreurDto save(LivreurDto livreurDto);
 
-    Optional<LivreurDto> update(LivreurDto livreurDto, Long id);
+    Optional<LivreurDto> update(LivreurDto livreurDto);
 
     Page<LivreurDto> findAll(Pageable pageable);
 
