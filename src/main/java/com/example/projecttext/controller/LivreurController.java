@@ -12,38 +12,37 @@ import java.util.Optional;
 @RestController
 @RequestMapping(Endpoints.URL_APP)
 @CrossOrigin(origins = "", allowedHeaders = "*")
-
 public class LivreurController {
-    private final LivreurService livreurService;
 
+    private final LivreurService livreurService;
 
     public LivreurController(LivreurService livreurService) {
         this.livreurService = livreurService;
     }
 
     @GetMapping(Endpoints.URL_LIVREUR)
-    public Page<LivreurDto> getAllLivreur(Pageable pageable) {
+    public Page<LivreurDto> getAllLivreur(Pageable pageable) throws Exception {
         return livreurService.findAll(pageable);
     }
 
     @PutMapping(Endpoints.URL_ONE_LIVREUR)
-    public Optional<LivreurDto> updateLivreur(LivreurDto livreurDto) {
+    public Optional<LivreurDto> updateLivreur(LivreurDto livreurDto) throws Exception {
         return livreurService.update(livreurDto);
     }
 
-
     @GetMapping(Endpoints.URL_ONE_LIVREUR)
-    public Optional<LivreurDto> getLivreur(Long id) {
+    public Optional<LivreurDto> getLivreur(Long id) throws Exception {
         return livreurService.findOne(id);
     }
 
     @PostMapping(Endpoints.URL_LIVREUR)
-    public LivreurDto createLivreur(LivreurDto livreurDto) {
+    public LivreurDto createLivreur(LivreurDto livreurDto) throws Exception {
         return livreurService.save(livreurDto);
     }
 
     @DeleteMapping(Endpoints.URL_ONE_LIVREUR)
-    public String deleteLivreur(Long id) {
-        return livreurService.delete(id);
+    public String deleteLivreur(Long id) throws Exception {
+        livreurService.delete(id);
+        return "Livreur supprimé avec succès";
     }
 }

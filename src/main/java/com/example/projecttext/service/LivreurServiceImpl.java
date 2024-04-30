@@ -1,6 +1,7 @@
 package com.example.projecttext.service;
 
 import com.example.projecttext.dto.LivreurDto;
+import com.example.projecttext.model.ERole;
 import com.example.projecttext.model.Livreur;
 import com.example.projecttext.repository.LivreurRepository;
 import com.example.projecttext.service.mapper.LivreurMapStruct;
@@ -29,6 +30,8 @@ public class LivreurServiceImpl implements LivreurService {
 
     @Override
     public LivreurDto save(LivreurDto livreurDto) {
+        livreurDto.setPassword(passwordEncoder.encode(livreurDto.getPassword()));
+        livreurDto.setERole(ERole.LIVREUR);
         Livreur livreur = livreurMapStruct.toEntity(livreurDto);
         Livreur livreur1 = livreurRepository.save(livreur);
         log.debug("Request to save livreur : {}", livreur1);

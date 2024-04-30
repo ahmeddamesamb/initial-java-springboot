@@ -7,13 +7,13 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface LivreurService {
-    LivreurDto save(LivreurDto livreurDto);
+    LivreurDto save(LivreurDto livreurDto) throws Exception;
 
-    Optional<LivreurDto> update(LivreurDto livreurDto);
+    Optional<LivreurDto> update(LivreurDto livreurDto) throws Exception;
 
-    Page<LivreurDto> findAll(Pageable pageable);
+    Page<LivreurDto> findAll(Pageable pageable) throws Exception;
 
-    Optional<LivreurDto> findOne(Long id);
+    Optional<LivreurDto> findOne(Long id) throws Exception;
 
-    String delete(Long id);
+    String delete(Long id) throws Exception;
 }

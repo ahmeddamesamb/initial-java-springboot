@@ -7,13 +7,14 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface GestionaireService {
-    GestionaireDto save(GestionaireDto gestionaireDto);
 
-    Optional<GestionaireDto> update(GestionaireDto gestionaireDto);
+    GestionaireDto save(GestionaireDto gestionaireDto) throws Exception;
 
-    Page<GestionaireDto> findAll(Pageable pageable);
+    Optional<GestionaireDto> update(GestionaireDto gestionaireDto) throws Exception;
 
-    Optional<GestionaireDto> findOne(Long id);
+    Page<GestionaireDto> findAll(Pageable pageable) throws Exception;
 
-    String delete(Long id);
+    Optional<GestionaireDto> findOne(Long id) throws Exception;
+
+    String delete(Long id) throws Exception;
 }

@@ -7,14 +7,15 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 public interface ClientService {
-    ClientDto save(ClientDto clientDto);
 
-    Optional<ClientDto> update(ClientDto clientDto);
+    ClientDto save(ClientDto clientDto) throws Exception;
 
-    Page<ClientDto> findAll(Pageable pageable);
+    Optional<ClientDto> update(ClientDto clientDto) throws Exception;
 
-    Optional<ClientDto> findOne(Long id);
+    Page<ClientDto> findAll(Pageable pageable) throws Exception;
 
-    String delete(Long id);
+    Optional<ClientDto> findOne(Long id) throws Exception;
+
+    String delete(Long id) throws Exception;
 
 }

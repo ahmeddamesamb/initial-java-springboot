@@ -2,6 +2,7 @@ package com.example.projecttext.service;
 
 import com.example.projecttext.dto.ClientDto;
 import com.example.projecttext.model.Client;
+import com.example.projecttext.model.ERole;
 import com.example.projecttext.repository.ClientRepository;
 import com.example.projecttext.service.mapper.ClientMapStruct;
 import lombok.extern.log4j.Log4j2;
@@ -29,6 +30,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientDto save(ClientDto clientDto) {
+        clientDto.setPassword(passwordEncoder.encode(clientDto.getPassword()));
+        clientDto.setERole(ERole.CLIENT);
         Client client = clientMapStruct.toEntity(clientDto);
         Client client1 = clientRepository.save(client);
         log.debug("Request to save Client : {}", client1);
@@ -38,7 +41,6 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Optional<ClientDto> update(ClientDto clientDto) {
         log.debug("Request to partially update Client : {}", clientDto);
-
         return clientRepository
                 .findById(clientDto.getId())
                 .map(existingClient -> {
@@ -57,14 +59,21 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Optional<ClientDto> findOne(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("The given id must not be null");
+        }
         log.debug("Request to get client : {}", id);
-        return clientRepository.findById(id).map(clientMapStruct::toDto);
+        return clientRepository.findById(id)
+                .map(client -> clientMapStruct.toDto(client));
     }
 
     @Override
     public String delete(Long id) {
-        log.debug("Request to get Client : {}", id);
+        if (id == null) {
+            throw new IllegalArgumentException("The given id must not be null");
+        }
+        log.debug("Request to delete Client : {}", id);
         clientRepository.deleteById(id);
-        return "client supprimer avec succes";
+        return "Client deleted successfully";
     }
 }
